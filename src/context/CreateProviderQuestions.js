@@ -1,36 +1,37 @@
-import React, { createContext, useContext, useEffect, useState } from 'react'
+import React, { createContext, useContext, useState } from 'react'
 
 const CreateAppContext = createContext();
 
 export default function CreateProviderQuestions({ children }) {
-    const [test, settest] = useState('wolas')
-
-    useEffect(() => {
-        settest('wolas')
-    }, [])
+    const [fetchData, setFetchData] = useState([])
+    const [viewQuestions, setViewQuestions] = useState(false)
+    
 
     //https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple
-    
-    //const getQuestions = e => {
-        //e.preventDefault();
-        //const url = `https://opentdb.com/api.php?amount=${}&category=${}&difficulty=${}&type=${}`;
-        // fetch(url) 
-        //     .then(response => {
-        //         return response.json();
-        //     })
-        //     .then(data => {
-        //         console.log(url);
-        //         console.log(data);
-        //         questions = data.results;
-        //         // nextQuestions();
-        //     })
-        //     .catch(error => {
-        //         console.log(error);
-        //     });
-    //};
+
+    const handleSubmit = (e,inputState) => {
+        e.preventDefault()
+        console.log(inputState);
+        const url = `https://opentdb.com/api.php?amount=${inputState.amount}&category=${inputState.category}&difficulty=${inputState.difficulty}&type=${inputState.type}`;
+        fetch(url)
+            .then(response => {
+                return response.json();
+            })
+            .then(data => {
+                //console.log(data);
+                setFetchData([...fetchData, data.results])
+                //console.log(fetchData);
+            })
+            .catch(error => {
+                console.log(error);
+            });
+    }
 
     const context = {
-        test
+        fetchData,
+        viewQuestions,
+        handleSubmit,
+        setViewQuestions
     }
 
     return (
