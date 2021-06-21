@@ -9,10 +9,12 @@ export default function CreateProviderQuestions({ children }) {
         settest('wolas')
     }, [])
 
+    //https://opentdb.com/api.php?amount=10&category=9&difficulty=easy&type=multiple
+    
     //const getQuestions = e => {
         //e.preventDefault();
         //const url = `https://opentdb.com/api.php?amount=${}&category=${}&difficulty=${}&type=${}`;
-        // fetch(url)
+        // fetch(url) 
         //     .then(response => {
         //         return response.json();
         //     })

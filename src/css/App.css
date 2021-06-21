@@ -1,4 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Staatliches&display=swap");
+
 * {
   padding: 0;
   margin: 0;
+}
+
+.container,
+.containerPricipal {
+  display: flex;
+  flex-direction: column;
+  background: rgb(53, 54, 59);
+  height: 100vh;
+}
+
+.containerPricipal {
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    142deg,
+    rgba(44, 125, 106, 0.74) 0%,
+    rgb(53, 54, 59) 28%,
+    rgb(53, 54, 59) 71%,
+    rgba(145, 74, 147, 0.74) 100%
+  );
+}
+
+.containerMenu {
+  display: flex;
+  flex-direction: column;
+  background: rgb(223, 221, 36);
+  background: linear-gradient(
+    212deg,
+    rgba(223, 221, 36, 1) 0%,
+    rgba(195, 27, 64, 1) 100%
+  );
+  -webkit-box-shadow: 0px 10px 13px -7px #000000,
+    0px 3px 27px 5px rgba(0, 0, 0, 0.88);
+  box-shadow: 0px 10px 13px -7px #000000, 0px 3px 27px 5px rgba(0, 0, 0, 0.88);
+  width: 70%;
+  height: 90%;
+  border-radius: 20px;
+  justify-content: center;
+  z-index: 2;
+}
+
+.styleForm {
+  display: flex;
+  width: 100%;
+  height: 90%;
+  flex-direction: column;
+  background-color: transparent;
+}
+
+.question-field {
+  width: 90%;
+  margin: auto;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+  margin-bottom: 25px;
+}
+
+.amount {
+  margin-top: 10px;
+  background-color: transparent;
+  outline: none;
+  padding: 7px;
+  border: none;
+  border-bottom: 2px solid rgba(223, 23, 55, 1);
+}
+
+.txt {
+  font-family: "Staatliches", cursive;
+  color: aliceblue;
 }
