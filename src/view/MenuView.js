@@ -1,30 +1,32 @@
-import React, { useState ,useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { useContexApp } from '../context/CreateProviderQuestions';
 import MenuStartGame from '../components/MenuStartGame.js';
 import CardMenu from '../components/CardMenu.js';
 import HederTable from '../components/HederTable';
+import EndGameView from './EndGameView'
 
 export default function MenuView() {
 
-    const [cuestions, setCuestions] = useState(null);
-    const { closeMenu, fetchData } = useContexApp();
+    const { closeMenu, fetchData, endGame } = useContexApp();
 
     useEffect(() => {
-        setCuestions(fetchData);
-        console.log(fetchData[0]);
-    }, [fetchData]);
-
-    
+        console.log(closeMenu);
+    }, [closeMenu])
 
     return (
         <div className="container">
             <div className="containerPricipal">
                 {closeMenu && <HederTable fetchData={fetchData} />}
                 <div className="containerMenu">
-                    <MenuStartGame />
-                    {closeMenu && (
-                        <CardMenu cuestions={cuestions} />
-                    )}
+                    {endGame ? null : <MenuStartGame />}
+                    {endGame ? (
+                        <EndGameView />
+                    )
+                        : closeMenu && (
+                            <CardMenu />
+                        )
+                    }
+
                 </div>
             </div>
         </div>

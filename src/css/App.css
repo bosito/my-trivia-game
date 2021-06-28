@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Staatliches&display=swap");
 @import url('https://fonts.googleapis.com/css2?family=PT+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100&display=swap');
 
 * {
   padding: 0;
@@ -83,11 +84,10 @@
   color: aliceblue;
 }
 
-
 .bottom {
   background-color: white;
   font-family: "Staatliches", cursive;
-  margin-top: 20px;
+  margin-top: 10px;
   width: 50%;
   height: 30px;
   border-radius: 20px;
@@ -98,6 +98,7 @@
   font-weight: bold;
 }
 
+.bottomCuestions:hover,
 .bottom:hover{
   transition: 1s;
   font-weight: bold;
@@ -123,4 +124,33 @@
   top: 20px;
   width: 90%;
   box-shadow: initial;
+}
+
+.contCardCuestions{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.contBotonsCuestions{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  flex-wrap: wrap;
+  background-color: transparent;
+}
+
+.bottomCuestions{
+  background-color: white;
+  font-family: sans-serif;
+  margin: 5px;
+  min-width: 40%;
+  height: 30px;
+  border-radius: 20px;
+  border-width: 0px;
+  border-color: transparent;
+  transition: 1s;
+  font-size: medium;
+  font-weight: bold;
 }
