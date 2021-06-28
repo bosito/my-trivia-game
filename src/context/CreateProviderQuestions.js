@@ -30,20 +30,20 @@ export default function CreateProviderQuestions({ children }) {
 
     const handelAddConutCorrect = () => setCountCorrectQuestions((countCorrectQuestions) => countCorrectQuestions + 1);
     
-    const isLastCuestion = () => {
-        setCloseMenu(false);
-        setEndGame(true);
-    };
-
     useEffect(() => {
         (() => {
             if (fetchData) {
                 if (fetchData.length === countQuestion) {
+                    const isLastCuestion = () => {
+                        setCloseMenu(false);
+                        setEndGame(true);
+                    };
+
                     isLastCuestion();
                 }
             }
         })();
-    }, [countQuestion]);
+    },[countQuestion, fetchData]);
 
     const context = {
         fetchData,

@@ -7,18 +7,21 @@ export default function CardMenu() {
     let { countQuestion } = useContexApp();
     const [cuestionsTotal, setCuestionsTotal] = useState(null);
 
-    const formatAway = () => {
-        const newArray = [...fetchData[countQuestion].incorrect_answers,
-        fetchData[countQuestion].correct_answer];
-        newArray.sort(() => Math.floor(Math.random() - 0.5));
-        setCuestionsTotal(newArray);
-    };
+    
 
     useEffect(() => {
         if (fetchData[countQuestion]) {
+            
+            const formatAway = () => {
+                const newArray = [...fetchData[countQuestion].incorrect_answers,
+                fetchData[countQuestion].correct_answer];
+                newArray.sort(() => Math.floor(Math.random() - 0.5));
+                setCuestionsTotal(newArray);
+            };
+
             formatAway();
         }
-    },[countQuestion]);
+    },[countQuestion, fetchData])
 
     const isCorrectAnswer = (textOptions) => {
         if (textOptions === fetchData[countQuestion].correct_answer) {

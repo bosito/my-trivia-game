@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import CongratulationsSvg from '../css/svg/Congratulations_Svg';
-import LoseSvg from '../css/svg/Lose_svg'
-import { useContexApp } from '../context/CreateProviderQuestions'
+import LoseSvg from '../css/svg/Lose_svg';
+import { useContexApp } from '../context/CreateProviderQuestions';
 
 export default function EndGameView() {
 
@@ -46,8 +46,8 @@ export default function EndGameView() {
                     {countCorrectQuestions} de {fetchData.length}
                 </p>
             </>
-        )
-    }
+        );
+    };
 
     return (
         <div className="contCardCuestions">
@@ -59,5 +59,5 @@ export default function EndGameView() {
                     <LoseView />
             }
         </div>
-    )
-}
+    );
+};

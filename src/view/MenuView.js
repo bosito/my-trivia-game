@@ -3,7 +3,7 @@ import { useContexApp } from '../context/CreateProviderQuestions';
 import MenuStartGame from '../components/MenuStartGame.js';
 import CardMenu from '../components/CardMenu.js';
 import HederTable from '../components/HederTable';
-import EndGameView from './EndGameView'
+import EndGameView from './EndGameView';
 
 export default function MenuView() {
 
